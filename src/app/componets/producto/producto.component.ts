@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductoService } from '../../services/producto.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { Producto } from '../../models/producto.models';
 
 @Component({
   selector: 'app-producto',
@@ -9,11 +10,13 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./producto.component.css']
 })
 export class ProductoComponent implements OnInit {
-  producto: [] = [];
+  producto: Producto;
    id = 0;
-
+  // tslint:disable-next-line:variable-name
   constructor( public _pService: ProductoService,
-               public activatedRoute: ActivatedRoute ) {
+               public activatedRoute: ActivatedRoute,
+               public router: Router ) {
+
                  activatedRoute.params.subscribe( params => {
                    this.id = params.id;
                   });
@@ -33,8 +36,16 @@ export class ProductoComponent implements OnInit {
   }
 
   actualizar(  valor: NgForm ) {
-      console.log( valor.value );
-      this._pService.actualizarProducto(this.id, valor.value);
+    if (  valor.invalid ) {
+      return;
+    }
+    console.log( this.producto );
+
+    this._pService.actualizarProducto(this.id, this.producto)
+    .subscribe( (data: any)  =>  {
+      console.log(data.producto);
+      this.router.navigate(['/producto', data.producto._id]);
+    } );
   }
 
 }

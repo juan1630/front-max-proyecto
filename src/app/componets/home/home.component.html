@@ -8,7 +8,7 @@
             <form #form='ngForm' (ngSubmit)="agregar(form)">
                 <div class="form-group">
                     <input type="text" name="nombre" [ngModel]="nombre" class="form-control">
-                    <label for="nombre"> Nombre del producto</label>
+                    <label for="producto.nombre"> Nombre del producto</label>
                 </div>
                 <div class="form-group">
                     <input type="text" name="categoria" [ngModel]="categoria" class="form-control">

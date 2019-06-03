@@ -10,6 +10,7 @@ import { Producto } from '../models/producto.models';
 export class ProductoService {
 
 
+
   constructor( public http: HttpClient ) { }
 
 
@@ -42,11 +43,10 @@ export class ProductoService {
      }));
   }
 
-  actualizarProducto( id: number, data: any ) {
+  actualizarProducto( id: number, data: Producto ) {
     const URI = `${URL}/producto/${id}`;
-    this.http.put(URI, data)
+    return this.http.put(URI, data)
     .pipe( map(  (resp: any) => {
-      console.log(resp);
       return resp;
      } ));
   }

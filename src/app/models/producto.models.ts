@@ -4,7 +4,8 @@ export class Producto {
         public categoria: string,
         public modelo: string,
         public marca: string,
-        public precio: string,
+        public precioCompra: string,
+        public precioVenta: string,
         public disponible: number
      ) {}
 }
