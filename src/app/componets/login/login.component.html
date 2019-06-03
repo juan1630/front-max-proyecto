@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-md-4 offset-4">
+        <form #f='ngForm' ngNativeValidate (ngSubmit)="ingresar(f)">
+            <div class="form-group center">
+                <i class="fas fa-tools"></i>
+                <br>
+                <label for="email">Email</label>
+                <input [ngModel]="email" type="text" id="email" placeholder="Ingresa tu correo" name="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password"> Password </label>
+                <input type="password" [ngModel]="password" id="password" placeholder="Ingresa tu contraseña" name="password" class="form-control">
+            </div>
+            <div class="form-group text-center ">
+                <p class="center"> Crea tu cunta
+                    <a routerLink="/registro"> aqui </a>
+                </p>
+                <button class="btn btn-danger" type="submit"> Enviar  </button>
+            </div>
+        </form>
+    </div>
+</div>
