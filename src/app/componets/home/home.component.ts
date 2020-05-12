@@ -9,16 +9,20 @@ import { NgForm } from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
   productos: [] = [];
+  public categorias: string[]=[];
+
   constructor( public _pService: ProductoService ) { }
 
   ngOnInit() {
     this.cargarProductos();
   }
-cargarProductos() {
-  this._pService.cargarItems()
-  .subscribe( (data: any) => {
-    console.log( data );
-    this.productos = data;
+
+
+  cargarProductos() {
+    this._pService.cargarItems()
+    .subscribe( (data: any) => {
+      console.log( data );
+      this.productos = data;
    });
 }
 
@@ -27,7 +31,8 @@ cargarProductos() {
     console.log( f.value );
     this._pService.agregarProduct( f.value )
     .subscribe( (data: any ) => {
-      console.log(data);
+      // console.log(data);
+
       this.cargarProductos();
      });
   }

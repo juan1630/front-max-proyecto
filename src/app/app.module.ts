@@ -10,6 +10,7 @@ import { APPROUTES } from './routes';
 import { AsideComponent } from './componets/aside/aside.component';
 import { HomeComponent } from './componets/home/home.component';
 import { ProductoComponent } from './componets/producto/producto.component';
+import { ServicioComponent } from './componets/servicio/servicio.component';
 // import { ServicioComponent } from './componets/servicio/servicio.component';
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ProductoComponent } from './componets/producto/producto.component';
     RegisterComponent,
     AsideComponent,
     HomeComponent,
-    ProductoComponent
+    ProductoComponent,
+    ServicioComponent
   ],
   imports: [
     BrowserModule,

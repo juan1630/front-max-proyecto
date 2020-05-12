@@ -50,4 +50,13 @@ export class ProductoService {
       return resp;
      } ));
   }
+
+
+  agregarServicio( servicio ) {
+
+    const uri  = `${URL}/servicio/nuevo/servicio`;
+
+   return this.http.post(uri, servicio);
+
+  }
 }

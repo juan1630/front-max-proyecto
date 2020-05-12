@@ -1,3 +1,137 @@
-<p>
-  servicio works!
-</p>
+
+<form  ngSubmit="agregarServicio()"  >
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2">
+        <app-aside></app-aside>
+      </div>
+
+      <div class="col-md-3">
+
+        <div class="form-group">
+          <label for="nombre">Nombre:  </label>
+          <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" [(ngModel)]="servicio.nombre" >
+
+        </div>
+
+        <div class="form-group">
+          <label for="apellido">Apellido:  </label>
+          <input type="text" class="form-control" name="primerApellido" id="apellido" placeholder="Apellido" [(ngModel)]="servicio.apellido" >
+
+        </div>
+
+
+        <div class="form-group">
+          <label for="apellidoDos">Segundo apellido:  </label>
+          <input type="text" class="form-control" name="segundoApellido" id="apellidoDos" placeholder="Segundo apellido" [(ngModel)]="servicio.segundoApellido">
+
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email:  </label>
+          <input type="email" class="form-control" name="email" id="email" placeholder="Email"
+          [(ngModel)]="servicio.email"
+          >
+
+        </div>
+
+        
+        <div class="form-group">
+          <label for="telefono">Telefono:  </label>
+          <input type="number" class="form-control" name="telefono" id="telefono" placeholder="Telefono"
+          [(ngModel)]="servicio.telefono"
+          >
+  
+        </div>
+  
+  
+        <div class="form-group">
+          <label for="marcaEquipo">Marca del equipo:  </label>
+          <input type="text" class="form-control" name="marcaEquipo" id="marcaEquipo" placeholder="Marca del equipo" [(ngModel)]="servicio.marcaEquipo" >
+  
+        </div>
+        
+        <div class="form-group">
+          <label for="modeloEquipo">Modelo del equipo:  </label>
+          <input type="text" class="form-control" name="modeloEquipo" id="modeloEquipo" placeholder="Modelo del equipo"
+          [(ngModel)]="servicio.modeloEquipo"
+          >
+  
+        </div>
+
+      </div>
+      
+      <div class="col-md-3">
+            
+
+            <div class="form-group">
+              <label for="falla">Falla del equipo:  </label>
+              <input type="text" class="form-control" name="falla" id="falla" placeholder="Falla del equipo"
+              [(ngModel)]="servicio.fallaEquipo"
+              >
+      
+            </div>
+            
+            <div class="form-group">
+              <label for="accesorios">Accesorios del equipo:  </label>
+              <input type="text" class="form-control" name="accesorios" id="accesorios" placeholder="Accesorios del equipo"
+              [(ngModel)]="servicio.accesoriosEquipo"
+              >
+      
+            </div>
+
+            <div class="form-group">
+              <label for="adelanto">Adelanto:  </label>
+              <input type="text" class="form-control" name="adelanto" id="adelanto" placeholder="Adelanto" 
+              [(ngModel)]="servicio.adelanto"
+              >
+      
+            </div>
+
+            <div class="form-group">
+              <label for="costoTotal"> Costo total:  </label>
+              <input type="text" class="form-control" name="costoTotal" id="costoTotal" placeholder="Costo total"
+              [(ngModel)]="servicio.costoTotal"              >
+      
+            </div>
+
+            <div class="form-group">
+              <label for="productos">Productos:  </label>
+              <input type="text" class="form-control" name="productos" id="productos" placeholder="Productos"
+              [(ngModel)]="servicio.productos"
+              >
+              
+            </div>
+
+            
+            <div class="form-group">
+              <label for="estado">Estado:  </label>
+              <input type="text" class="form-control" name="estado" id="estado" placeholder="Estado del equipo"
+              [(ngModel)]="servicio.estado"
+              >
+      
+            </div>
+
+            
+          <button type="submit" (click)="agregarServicio()" class="btn btn-success btn-block" >
+            Agregar
+          </button>
+            
+        </div>
+        
+            <div class="col-md-2">
+              <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                <div class="card-header">Servicio creado </div>
+                <div class="card-body">
+                  <h5 class="card-title"> 
+                    {{ serviceDB.nombreCliente }}
+                  </h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+            </div>
+      
+    </div>
+
+  </div>
+</form>
