@@ -22,8 +22,7 @@ export class ServicioComponent implements OnInit {
     accesoriosEquipo:'',
     adelanto: '',
     costoTotal: '',
-    productos :'',
-    estado: ''
+    productos :''
 
   }
 

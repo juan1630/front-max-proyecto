@@ -1,0 +1,100 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <app-aside></app-aside>
+    </div>
+    <div class="col-md-5 mt-3 " >
+
+      <div class="alert alert-success" role="alert">
+        Servicio pendiente
+      </div>
+    
+      <h3> Cliente: </h3> 
+
+      <table class="table">
+        <thead>
+          <tr>
+
+            <th scope="col">Nombre</th>
+            <th scope="col">Primer apellido</th>
+            <th scope="col">Segundo Apellido </th>
+            <th scope="col">  Contacto </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr >
+            <th scope="row"> 
+              {{ servicio.nombreCliente }}
+            </th>
+            <td>
+              {{ servicio.primerApellido }}
+            </td>
+            <td>
+              {{ servicio.segundoApelldio }}
+            </td>
+            <td> 
+              {{ servicio.email }}/
+              {{ servicio.telefono }}
+            </td>
+          </tr>
+     
+        </tbody>
+      </table>
+      <hr>
+      <h3> Equipo: </h3> 
+
+      <table class="table">
+        <thead>
+          <tr>
+
+            <th scope="col">Marca</th>
+            <th scope="col">Modelo  </th>
+            <th scope="col"> Aceesorios </th>
+            <th scope="col">  Productos  </th>
+            <th>
+              Costo
+            </th>
+            <th>
+              Adelanto
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr >
+            <th scope="row"> 
+              {{ servicio.marcaEquipo }}
+            </th>
+            <td>
+              {{ servicio.modeloEquipo }}
+            </td>
+            <td>
+              {{ servicio.accesorio }}
+            </td>
+            <td> 
+              {{ servicio.productos }}
+            </td>
+            <td> 
+              {{ servicio.costoTotal }}
+            </td>
+            <td> 
+              {{ servicio.adelanto }}
+            </td>
+          </tr>
+     
+        </tbody>
+      </table>
+
+    </div>
+    <div class="col-md-3">
+      <form action="" #f='ngForm'  (ngSubmit)="estado( f )" >
+        <div class="form-group">
+          <label for="estado"> Estado del equipo:  </label>
+          <input type="text" name="estado" ngModel id="estado" placeholder="Estado del equipo" class="form-control" [value]="servicio.estado"  >
+          <button type="submit"  class="btn btn-primary btn-block mt-2" >
+            Actualizar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

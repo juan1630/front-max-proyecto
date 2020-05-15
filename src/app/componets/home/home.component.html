@@ -51,7 +51,16 @@
                 <p class="card-text"> Marca: {{ producto.marca }}</p>
                 <p class="card-text"> Precio: {{ producto.precioVenta }}</p>
                 <p class="card-text"> Disponible: {{ producto.disponible }} </p>
-                <button class="btn btn-info btn-block" [routerLink]="['/producto', producto._id]"> Ver más </button>
+                <button class="btn btn-success btn-block" [routerLink]="['/producto', producto._id]"> Ver más </button>
+
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-block btn-primary" > 
+                    <i class="fas fa-edit"></i>    
+                </button>
+                <button class="btn btn-block btn-danger" >
+                    <i class="fas fa-trash"></i>    
+                </button>
             </div>
         </div>
     </div>

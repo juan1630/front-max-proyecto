@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <app-aside></app-aside>
+    </div>
+    <div class="col-md-9">
+
+      <div class="card-group">
+        <div class="card"  *ngFor="let servicio  of  servicios"  >
+          <div class="card-body">
+            <h5 class="card-title"> 
+              {{ servicio.falla }}
+            </h5>
+            <p class="card-text"> 
+              Marca del equipo: {{ servicio.marcaEquipo }}
+              <br> 
+              Modelo del equipo: {{ servicio.modeloEquipo }}
+            </p>
+            <p class="card-text">
+              <small class="text-muted">
+              Estado del equipo:  {{ servicio.estado }}
+            </small>
+          </p>
+              <button class="btn btn-success btn-block" [routerLink]="['/servicio', servicio._id]"  >
+                Ver más...  
+              </button>
+        
+            </div>
+
+        
+        </div>
+        </div>
+    </div>
+  </div>
+</div>

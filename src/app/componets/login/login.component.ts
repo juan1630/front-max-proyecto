@@ -27,7 +27,14 @@ export class LoginComponent implements OnInit {
     this._lServices.login( usuario ).
     subscribe( ( data: any ) => {
       console.log( data );
-      window.location.href = '#/home';
+      if( data.usuario.role === 'ADMIN_ROEL') {
+        
+        window.location.href = '#/home';
+      }else {
+        // aca ira el hom del usuario
+        window.location.href = '#/servicio';
+      }
+
      } );
   }
 

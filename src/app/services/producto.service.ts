@@ -51,6 +51,7 @@ export class ProductoService {
      } ));
   }
 
+// se crea un nuevo servicio de computadoras
 
   agregarServicio( servicio ) {
 
@@ -58,5 +59,36 @@ export class ProductoService {
 
    return this.http.post(uri, servicio);
 
+  }
+
+
+  // visualización de los servicios creado
+ 
+  getService() {
+
+    let url = `${URL}/servicio/servicios`;
+    
+    return this.http.get( url );
+ 
+  }
+
+
+  getServiceById( id ) {
+    let url = `${URL}/servicio/servicio/${id}`;
+     return  this.http.get(url);
+  }
+  updateService( id, cuerpo  ){
+
+    let url = `${URL}/servicio/servicios/edit/${id}`;
+    return this.http.put( url, cuerpo );
+
+  } 
+
+
+  getEquimentByName( name ){
+    console.log( name );
+    let url = `${URL}/servicio/servicio/entrega/${name}`;
+    return this.http.get( url );
+  
   }
 }
