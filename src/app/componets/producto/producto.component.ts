@@ -10,7 +10,7 @@ import { Producto } from '../../models/producto.models';
   styleUrls: ['./producto.component.css']
 })
 export class ProductoComponent implements OnInit {
-  producto: Producto;
+  producto: Producto[]=[];
    id = 0;
   // tslint:disable-next-line:variable-name
   constructor( public _pService: ProductoService,
@@ -35,13 +35,16 @@ export class ProductoComponent implements OnInit {
      });
   }
 
+
+  // funcion a quitar
+
   actualizar(  valor: NgForm ) {
     if (  valor.invalid ) {
       return;
     }
     console.log( this.producto );
 
-    this._pService.actualizarProducto(this.id, this.producto)
+    this._pService.actualizarProducto(this.id, this.producto[0])
     .subscribe( (data: any)  =>  {
       console.log(data.producto);
       this.router.navigate(['/producto', data.producto._id]);

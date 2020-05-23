@@ -51,6 +51,14 @@ export class ProductoService {
      } ));
   }
 
+
+  eliminarProducto( id: string ){
+
+    const uri  = `${URL}/producto/producto/${id}`;
+    return this.http.delete( uri );
+
+  }
+
 // se crea un nuevo servicio de computadoras
 
   agregarServicio( servicio ) {
@@ -91,4 +99,33 @@ export class ProductoService {
     return this.http.get( url );
   
   }
+
+
+  // subirArchivo( archivo: File,  id: string ) {
+
+  //   return new Promise( (resolve, reject) => {
+  //     const formData = new FormData();
+  //     const xhr = new XMLHttpRequest();
+
+  //     formData.append( 'imagen', archivo, archivo.name );
+  //     // tslint:disable-next-line:only-arrow-functions
+  //     xhr.onreadystatechange = function() {
+  //       if ( xhr.readyState === 4 ) {
+  //         if (xhr.status === 200) {
+  //           console.log('Imagen subida');
+  //           resolve( JSON.parse(xhr.response));
+  //         } else {
+  //           console.log('fallo la subida');
+  //           reject(xhr.response);
+  //         }
+  //    }
+  //   };
+
+  //     const url = `${URL}/producto/upload/${id}`;
+  //     xhr.open('PUT', url, true);
+  //     xhr.send(formData);
+  //     });
+  // }
+
+
 }

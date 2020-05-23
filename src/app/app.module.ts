@@ -14,6 +14,9 @@ import { ServicioComponent } from './componets/servicio/servicio.component';
 import { AdminServiceComponent } from './componets/servicioAdmin/admin-service/admin-service.component';
 import { ServcioIDComponent } from './componets/servicios/servcio-id/servcio-id.component';
 import { EntregaEquipoComponent } from './componets/pagos/entrega-equipo/entrega-equipo.component';
+import { HomeAdminComponent } from './pages/home-admin/home-admin.component';
+import { ProductoAdminComponent } from './pages/producto-admin/producto-admin.component';
+import { ProductoUnoAdminComponent } from './pages/producto-uno-admin/producto-uno-admin.component';
 // import { ServicioComponent } from './componets/servicio/servicio.component';
 
 @NgModule({
@@ -27,7 +30,10 @@ import { EntregaEquipoComponent } from './componets/pagos/entrega-equipo/entrega
     ServicioComponent,
     AdminServiceComponent,
     ServcioIDComponent,
-    EntregaEquipoComponent
+    EntregaEquipoComponent,
+    HomeAdminComponent,
+    ProductoAdminComponent,
+    ProductoUnoAdminComponent
   ],
   imports: [
     BrowserModule,

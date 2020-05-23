@@ -26,13 +26,18 @@ export class LoginComponent implements OnInit {
     const usuario = new User(null, f.value.email, f.value.password);
     this._lServices.login( usuario ).
     subscribe( ( data: any ) => {
+      
       console.log( data );
-      if( data.usuario.role === 'ADMIN_ROEL') {
+      let usuario = JSON.stringify( data.usuario );
+
+      localStorage.setItem('usuario', usuario);
+      
+      if( data.usuario.role === 'ADMIN_ROLE') {
         
-        window.location.href = '#/home';
+        window.location.href = '#/homeAdmin';
       }else {
         // aca ira el hom del usuario
-        window.location.href = '#/servicio';
+        window.location.href = '#/home';
       }
 
      } );

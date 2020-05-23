@@ -1,0 +1,69 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-md-2">
+      <div class="box"  routerLinkActive="active" >
+          <a routerLink="/home" > 
+              <i class="fas fa-tools"></i>
+    
+          </a>
+      </div>
+      <div class="box" routerLinkActive="active">
+          <a routerLink="/servicio/admin" >
+              <i class="fas fa-desktop"></i>
+          </a>
+      </div>
+      <div class="box">
+          <a routerLink="/productos/admin/all" >
+    
+            <i class="far fa-folder"></i>
+          </a>
+      </div>
+    
+      <div class="box">
+
+          <i class="fas fa-cash-register"></i>
+    
+      </div>
+    </div>
+
+
+
+    <div class="col-md-10">
+
+     
+    <div class="card-columns">
+
+
+      <div class="card" style="width:18rem;" *ngFor="let producto of productos">
+        <div class="card-body">
+          <img  class="card-img-top" src="../../../assets/img/productos/talador.jpg" >
+            <h4 class="card-title">Nombre: {{ producto.nombre }} </h4>
+            <p class="card-text"> Modelo: {{ producto.modelo }} </p>
+
+            <button class="btn btn-success btn-block" [routerLink]="['/producto', producto._id]"> Ver más </button>
+    
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-block btn-primary"  [routerLink]="['/productos','admin', 'one' , producto._id]"  > 
+                <i class="fas fa-edit"></i>    
+            </button>
+            <button class="btn btn-block btn-danger" >
+                <i class="fas fa-trash"></i>    
+            </button>
+        </div>
+  
+
+
+    </div>
+
+    </div>
+    
+    </div>
+
+  </div>
+</div> 
+ 
+ 
+ 
+ 

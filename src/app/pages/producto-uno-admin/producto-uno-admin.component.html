@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <div class="box"  routerLinkActive="active" >
+        <a routerLink="/home" > 
+            <i class="fas fa-tools"></i>
+  
+        </a>
+    </div>
+    <div class="box" routerLinkActive="active">
+        <a routerLink="/servicio/admin" >
+            <i class="fas fa-desktop"></i>
+        </a>
+    </div>
+    <div class="box">
+        <a routerLink="/productos/admin/all" >
+  
+          <i class="far fa-folder"></i>
+        </a>
+    </div>
+  
+    <div class="box">
+  
+        <i class="fas fa-cash-register"></i>
+  
+    </div>
+    </div>
+
+    <div class="col-md-8">
+       <form class="margin" #f='ngForm' (ngSubmit)="actualizar(f)">
+        <div class="form-group">
+            <label for="marca">Nombre del producto</label>
+            <input type="text" [(ngModel)]="productos.nombre" name="nombre" value="{{ productos.nombre }}" class="form-control" placeholder="Ingresa el nombre del producto">
+        </div>
+
+        <div class="form-group">
+            <label for=""> Categoria del producto </label>
+            <input type="text" [(ngModel)]="productos.categoria" name="categoria" value="{{ productos.categoria }}" class="form-control" placeholder="Ingresa la categoria del producto">
+        </div>
+
+        <div class="form-group">
+            <label for="categoria"> Modelo del producto </label>
+            <input type="text" [(ngModel)]="productos.modelo" name="modelo" class="form-control" value="{{ productos.modelo }}" placeholder="Ingresa el modelo del producto">
+        </div>
+
+        <div class="form-group">
+            <label for="">Maraca del producto</label>
+            <input type="text" [(ngModel)]="productos.marca" value="{{ productos.marca }}" name="marca" class="form-control" placeholder="Ingresa la marca del producto">
+        </div>
+
+        <div class="form-group">
+            <label for="">Precio de compra</label>
+            <input type="text" [(ngModel)]="productos.precioCompra" name="precioCompra" value="{{ productos.precioCompra }}" class="form-control" placeholder="Ingresa el precio de compra del producto">
+        </div>
+
+
+        <div class="form-group">
+            <label for="">Precio de venta</label>
+            <input type="text" [(ngModel)]="productos.precioVenta" name="precioVenta" value="{{ productos.precioVenta }}" class="form-control" placeholder="Ingresa el precio de venta del producto">
+        </div>
+
+        <button class="btn btn-primary btn-block" (click)="actualizar(f)"> Actualizar </button>
+        <button class="btn btn-danger btn-block" routerLink="/home"> Regresar </button>
+    </form>
+
+    </div>
+
+
+  </div>
+</div>

@@ -18,9 +18,7 @@
         </form>
     </div>
   
-  </div>
-  <div class="row">
-    <div class="col-md-10">
+    <div class="col-md-6">
       <div class="card-group">
         <div class="card"  *ngFor="let servi  of servicio.servicio"  >
           <div class="card-body">
@@ -38,12 +36,13 @@
               adelanto: {{ servi.adelanto }}
             </small>
           </p>
-              <button class="btn btn-success btn-block" [routerLink]="['/servicio', servicio._id]"  >
+              <button class="btn btn-success btn-block" [routerLink]="['/servicio', servi
+              ._id]"  >
                 Ver más...  
               </button>
         
             </div>
-
+  
         
         </div>
         </div>
